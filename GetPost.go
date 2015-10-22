@@ -25,7 +25,7 @@ func PostHello(rw http.ResponseWriter, req *http.Request, p httprouter.Params) {
 	var myjson3 MyJson
 	s3 := json.NewDecoder(req.Body)
 	err := s3.Decode(&myjson3)
-//	fmt.Fprintf(rw, myjson3.Name)
+	
 	var myJsonresp2 MyJsonRes
 	myJsonresp2.Salutation = "PHello " + myjson3.Name + " !"
 	b2, err := json.Marshal(myJsonresp2)
